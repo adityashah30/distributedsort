@@ -8,24 +8,24 @@ package researchpaper;
  *
  * @author aditya
  */
-public class QuickSortDispatcher implements QuickSortThreadCompleteListener {
+public class SortDispatcher implements SortThreadCompleteListener {
 
     private int[] arr;
     private int numOfThreads;
-    private QuickSortThread[] sortThreads;
+    private SortThread[] sortThreads;
 
-    public QuickSortDispatcher(int[] arr, int numOfThreads) {
+    public SortDispatcher(int[] arr, int numOfThreads) {
         this.arr = arr;
         this.numOfThreads = numOfThreads;
-        sortThreads = new QuickSortThread[numOfThreads];
+        sortThreads = new SortThread[numOfThreads];
     }
 
     public void dispatch() {
         for (int i = 0; i < numOfThreads; i++) {
             if (i < numOfThreads - 1) {
-                sortThreads[i] = new QuickSortThread(arr, (i * arr.length) / numOfThreads, ((i + 1) * arr.length) / numOfThreads - 1);
+                sortThreads[i] = new SortThread(arr, (i * arr.length) / numOfThreads, ((i + 1) * arr.length) / numOfThreads - 1);
             } else {
-                sortThreads[i] = new QuickSortThread(arr, (i * arr.length) / numOfThreads, arr.length - 1);
+                sortThreads[i] = new SortThread(arr, (i * arr.length) / numOfThreads, arr.length - 1);
             }
             this.addSource(sortThreads[i]);
             sortThreads[i].addListener(this);
@@ -34,15 +34,15 @@ public class QuickSortDispatcher implements QuickSortThreadCompleteListener {
         while (!allThreadsfinished());
     }
 
-    public synchronized void notifyOnThreadComplete(QuickSortThread thread) {
+    public synchronized void notifyOnThreadComplete(SortThread thread) {
         this.removeSource(thread);
     }
 
-    public void addSource(QuickSortThread thread) {
+    public void addSource(SortThread thread) {
         runningThreads.add(thread);
     }
 
-    public void removeSource(QuickSortThread thread) {
+    public void removeSource(SortThread thread) {
         runningThreads.remove(thread);
     }
 

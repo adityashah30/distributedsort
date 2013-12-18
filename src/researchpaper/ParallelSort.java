@@ -10,7 +10,7 @@ package researchpaper;
  */
 public class ParallelSort extends Thread implements Printable {
 
-    private QuickSortDispatcher sortdispatcher;
+    private SortDispatcher sortdispatcher;
     private MergeDispatcher mergedispatcher;
     private int[] arr;
     private int numOfThreads;
@@ -26,7 +26,7 @@ public class ParallelSort extends Thread implements Printable {
     }
 
     public void run() {
-        sortdispatcher = new QuickSortDispatcher(arr, numOfThreads);
+        sortdispatcher = new SortDispatcher(arr, numOfThreads);
         sortdispatcher.dispatch();
         mergedispatcher = new MergeDispatcher(arr, numOfThreads);
         mergedispatcher.dispatch();

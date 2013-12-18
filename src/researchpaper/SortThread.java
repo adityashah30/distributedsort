@@ -8,23 +8,23 @@ package researchpaper;
  *
  * @author aditya
  */
-public class QuickSortThread extends Thread implements Printable, QuickSortThreadCompleteNotifier {
+public class SortThread extends Thread implements Printable, SortThreadCompleteNotifier {
 
     private int[] arr;
     private int start;
     private int end;
-    private QuickSort qobj1;
+    private Sort sobj1;
 
-    public QuickSortThread(int[] arr, int start, int end) {
+    public SortThread(int[] arr, int start, int end) {
         this.arr = arr;
         this.start = start;
         this.end = end;
-        qobj1 = new QuickSort();
+        sobj1 = new Sort();
     }
 
     public void run() {
         try {
-            qobj1.quickSort(arr, start, end);
+            sobj1.sort(arr, start, end);
         } finally {
             notifyListeners();
         }
@@ -37,16 +37,16 @@ public class QuickSortThread extends Thread implements Printable, QuickSortThrea
         System.out.println();
     }
 
-    public void addListener(QuickSortThreadCompleteListener listener) {
+    public void addListener(SortThreadCompleteListener listener) {
         listeners.add(listener);
     }
 
-    public void removeListener(QuickSortThreadCompleteListener listener) {
+    public void removeListener(SortThreadCompleteListener listener) {
         listeners.remove(listener);
     }
 
     public void notifyListeners() {
-        for (QuickSortThreadCompleteListener l : listeners) {
+        for (SortThreadCompleteListener l : listeners) {
             l.notifyOnThreadComplete(this);
         }
     }
