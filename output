@@ -1,0 +1,40 @@
+NumOfCores: 1 Parallel Sort: 255
+NumOfCores: 1 Quick Sort: 134
+NumOfCores: 1 Merge Sort: 229
+NumOfCores: 1 Arrays Sort: 108
+-------------------------------------------------
+NumOfCores: 2 Parallel Sort: 121
+NumOfCores: 2 Quick Sort: 126
+NumOfCores: 2 Merge Sort: 211
+NumOfCores: 2 Arrays Sort: 95
+-------------------------------------------------
+NumOfCores: 3 Parallel Sort: 114
+NumOfCores: 3 Quick Sort: 128
+NumOfCores: 3 Merge Sort: 216
+NumOfCores: 3 Arrays Sort: 97
+-------------------------------------------------
+NumOfCores: 4 Parallel Sort: 94
+NumOfCores: 4 Quick Sort: 132
+NumOfCores: 4 Merge Sort: 216
+NumOfCores: 4 Arrays Sort: 97
+-------------------------------------------------
+NumOfCores: 5 Parallel Sort: 82
+NumOfCores: 5 Quick Sort: 129
+NumOfCores: 5 Merge Sort: 214
+NumOfCores: 5 Arrays Sort: 97
+-------------------------------------------------
+NumOfCores: 6 Parallel Sort: 75
+NumOfCores: 6 Quick Sort: 135
+NumOfCores: 6 Merge Sort: 220
+NumOfCores: 6 Arrays Sort: 96
+-------------------------------------------------
+NumOfCores: 7 Parallel Sort: 85
+NumOfCores: 7 Quick Sort: 132
+NumOfCores: 7 Merge Sort: 210
+NumOfCores: 7 Arrays Sort: 94
+-------------------------------------------------
+NumOfCores: 8 Parallel Sort: 79
+NumOfCores: 8 Quick Sort: 131
+NumOfCores: 8 Merge Sort: 216
+NumOfCores: 8 Arrays Sort: 96
+-------------------------------------------------

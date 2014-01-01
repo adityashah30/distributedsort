@@ -1,15 +1,21 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package researchpaper;
 
 /**
+ * The Sort class contains implementation of merge sort algorithm.
  *
- * @author aditya
+ * @author Aditya Shah
+ *
  */
 public class Sort {
 
+    /**
+     * The sort function.
+     *
+     * @param a The array to be sorted.
+     * @param start The starting index.
+     * @param end The ending index.
+     *
+     */
     public void sort(int a[], int start, int end) {
         if (start < end) {
             int mid = (start + end) / 2;
@@ -19,6 +25,17 @@ public class Sort {
         }
     }
 
+    /**
+     * The merge function. Takes two chunks of sorted data and combines them to
+     * one chunk of sorted data.
+     *
+     * @param a The array to be merged.
+     * @param start1 The starting index of first chunk.
+     * @param end1 The ending index of the first chunk.
+     * @param start2 The starting index of second chunk.
+     * @param end2 The ending index of the second chunk.
+     *
+     */
     public void merge(int a[], int start1, int end1, int start2, int end2) {
         int temp[] = new int[end1 - start1 + end2 - start2 + 2];
         int ptr1 = start1, ptr2 = start2, ptrmain = 0;

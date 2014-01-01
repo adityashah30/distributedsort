@@ -1,20 +1,36 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package researchpaper;
 
 /**
+ * The SortThread Class is a thread implementation of the Sort Class. Creates a
+ * thread. Implements the SortThreadCompleteNotifier interface.
  *
- * @author aditya
+ * @author Aditya Shah
  */
 public class SortThread extends Thread implements Printable, SortThreadCompleteNotifier {
 
+    /**
+     * The array to be sorted.
+     */
     private int[] arr;
+    /**
+     * The starting index.
+     */
     private int start;
+    /**
+     * The ending index.
+     */
     private int end;
+    /**
+     * Object of class Sort.
+     */
     private Sort sobj1;
 
+    /**
+     *
+     * @param arr The array to be sorted.
+     * @param start The starting index.
+     * @param end The ending index.
+     */
     public SortThread(int[] arr, int start, int end) {
         this.arr = arr;
         this.start = start;
