@@ -14,10 +14,12 @@ public class ParallelSort extends Thread implements Printable {
     private MergeDispatcher mergedispatcher;
     private int[] arr;
     private int numOfThreads;
+    private int choice;
 
-    public ParallelSort(int[] arr, int numOfThreads) {
+    public ParallelSort(int[] arr, int numOfThreads, int choice) {
         this.arr = arr;
         this.numOfThreads = numOfThreads;
+        this.choice = choice;
     }
 
     public void sort() {
@@ -26,7 +28,7 @@ public class ParallelSort extends Thread implements Printable {
     }
 
     public void run() {
-        sortdispatcher = new SortDispatcher(arr, numOfThreads);
+        sortdispatcher = new SortDispatcher(arr, numOfThreads, choice);
         sortdispatcher.dispatch();
         mergedispatcher = new MergeDispatcher(arr, numOfThreads);
         mergedispatcher.dispatch();

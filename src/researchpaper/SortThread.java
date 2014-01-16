@@ -24,6 +24,7 @@ public class SortThread extends Thread implements Printable, SortThreadCompleteN
      * Object of class Sort.
      */
     private Sort sobj1;
+    private int choice;
 
     /**
      *
@@ -31,11 +32,12 @@ public class SortThread extends Thread implements Printable, SortThreadCompleteN
      * @param start The starting index.
      * @param end The ending index.
      */
-    public SortThread(int[] arr, int start, int end) {
+    public SortThread(int[] arr, int start, int end, int choice) {
         this.arr = arr;
         this.start = start;
         this.end = end;
-        sobj1 = new Sort();
+        this.choice = choice;
+        sobj1 = new Sort(choice);
     }
 
     public void run() {

@@ -19,7 +19,7 @@ public class ResearchPaper {
         int a[] = new int[size];
         rpobj1.fillRandom(a, size);
         int numOfChunks = 4;
-        ParallelSort psort1 = new ParallelSort(a, numOfChunks);
+        ParallelSort psort1 = new ParallelSort(a, numOfChunks, 0);
         //psort1.printArray();
         psort1.sort();
         System.out.println(rpobj1.isSorted(a));
